@@ -1,9 +1,11 @@
 {
   "name": "adam-bookmarks-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bookmark App Project",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,19 @@
   "bugs": {
     "url": "https://github.com/thinkful-ei-heron/adam-bookmarks-app/issues"
   },
-  "homepage": "https://github.com/thinkful-ei-heron/adam-bookmarks-app#readme"
+  "homepage": "https://github.com/thinkful-ei-heron/adam-bookmarks-app#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "cuid": "^2.1.6",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
 }

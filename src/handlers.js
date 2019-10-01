@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import store from './store';
+import api from '.api';
 
 const generateBookmarkElement = function (item) {
     let itemHtml = `
@@ -32,3 +35,8 @@ const generateBookmarkItemsString = function (bookmarks) {
 const render = function () {
 
 }
+
+
+export default {
+
+};
