@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookmarks app</title>
+    <link rel='stylesheet' type='text/css' href='index.css'>
+</head>
+
+<body>
+    <section id='intial-view'>
+        <header>
+            <h1>My Bookmarks</h1>
+            <form id='add-filter-bookmarks-form'>
+                <button role='button' name='add-bookmark'>Add Bookmark</button>
+                <select id='rating-select'>
+                    <option value='default'>--filter bookmarks--</option>
+                    <option value='1'>1 Star</option>
+                    <option value='2'>2 Stars</option>
+                    <option value='3'>3 Stars</option>
+                    <option value='4'>4 Stars</option>
+                    <option value='5'>5 Stars</option>
+                </select>
+            </form>
+        </header>
+        <main>
+            <ul class='bookmarks-list'>
+                <li class='item-list-element' item-id='item-id'>
+                    <div class='bookmark-title'>Title 1</div>
+                    <div class='bookmark-rating'>Rating</div>
+                </li>
+                <li class='item-list-element' item-id='item-id'>
+                    <div class='bookmark-title'>Title 2</div>
+                    <div class='bookmark-rating'>Rating</div>
+                </li>
+            </ul>
+        </main>
+    </section>
+    <section id='expanded-view'>
+        <header>
+            <h1>My Bookmarks</h1>
+            <form id='add-filter-bookmarks-form'>
+                <button role='button' name='add-bookmark'>Add Bookmark</button>
+                <select id='rating-select'>
+                    <option value='default'>--filter bookmarks--</option>
+                    <option value='1'>1 Star</option>
+                    <option value='2'>2 Stars</option>
+                    <option value='3'>3 Stars</option>
+                    <option value='4'>4 Stars</option>
+                    <option value='5'>5 Stars</option>
+                </select>
+            </form>
+        </header>
+        <main>
+            <ul class='bookmarks-list-exp'>
+                <li class='item-list-element' item-id='item-id'>
+                    <div class='bookmark-title'>Title 1</div>
+                    <div class='bookmark-rating'>Rating</div>
+                    <div>
+                        <form action='https://www.google.com'>
+                            <button type='submit'>Visit Site</button>
+                        </form>
+                        <p>description</p>
+                    </div>
+                    <button class='bookmark-item-delete js-item-delete'>
+                        <span class='button-label'>Delete Bookmark</span>
+                    </button>
+                </li>
+                <li class='item-list-element' item-id='item-id'>
+                    <div class='bookmark-title'>Title 1</div>
+                    <div class='bookmark-rating'>Rating</div>
+                    <div>
+                        <form action='https://www.google.com'>
+                            <button type='submit'>Visit Site</button>
+                        </form>
+                        <p>description</p>
+                    </div>
+                    <button class='bookmark-item-delete js-item-delete'>
+                        <span class='button-label'>Delete Bookmark</span>
+                    </button>
+                </li>
+            </ul>
+        </main>
+    </section>
+    <section id='create-view'>
+        <header>
+            <h1>My Bookmarks</h1>
+        </header>
+        <main>
+            <form id='create-bookmarks-form'>
+                <fieldset>
+                    <legend>Bookmark Details</legend>
+                    <label for='title-entry'>Title</label>
+                    <input type='text' name='title' id='name-entry' placeholder='Name your bookmark' required />
+                    <label for='url-entry'>URL</label>
+                    <input type='text' name='url' id='url-entry' placeholder='eg. http://www.google.com' required />
+                    <label for='description-entry'>Description</label>
+                    <textarea id='description-entry' name='desc' rows='5'
+                        cols='20'>Add a description(optional)</textarea>
+                    <label for='rating-select'>Rating</label>
+                    <select id='rating-select' name='rating' required>
+                        <option value=''>--Please select a rating--</option>
+                        <option value='1'>1 Star</option>
+                        <option value='2'>2 Stars</option>
+                        <option value='3'>3 Stars</option>
+                        <option value='4'>4 Stars</option>
+                        <option value='5'>5 Stars</option>
+                    </select>
+                    <button class='submit'>Add Bookmark</button>
+                </fieldset>
+            </form>
+        </main>
+    </section>
+
+</body>
+
+</html>
