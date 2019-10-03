@@ -14,7 +14,7 @@ $.fn.extend({
 const generateBookmarkElement = function (item) {
     let itemHtml = `
         <li class='item-list-element' data-item-id='${item.id}'>
-            <div class='list-div'>
+            <div tabindex='0' class='bookmark-head'>
                 <div class='bookmark-title'>${item.title}</div>
                 <div class='bookmark-rating'>Rating: ${item.rating}</div>
         </div>    
@@ -22,7 +22,7 @@ const generateBookmarkElement = function (item) {
     if (item.expanded) {
         itemHtml = `
         <li class='item-list-element' data-item-id='${item.id}'>
-            <div class='list-div'>
+            <div tabindex='0' class='bookmark-head'>
                 <div class='bookmark-title'>${item.title}</div>
                 <div class='bookmark-rating'>Rating: ${item.rating}</div>
             </div>    
@@ -49,7 +49,7 @@ const render = function () {
     const bookmarkItemsString = generateBookmarkItemsString(items.filter((item) => {
         return item.rating >= parseInt(rating);
     }));
-    $('.bookmarks-list').html(bookmarkItemsString);
+    $('#bookmarks-list').html(bookmarkItemsString);
 }
 
 const generateAddBookmarkHtml = function () {
@@ -82,7 +82,7 @@ const generateAddBookmarkHtml = function () {
 }
 
 const handleAddBookmarkClicked = function () {
-    $('.add-bookmarks-form').on('click', '.add-bookmark-button', function (e) {
+    $('#add-bookmarks-form').on('click', '#add-bookmark-button', function (e) {
         e.preventDefault();
         console.log('`handleAddBookmarkClicked` ran');
         generateAddBookmarkHtml();
@@ -90,7 +90,7 @@ const handleAddBookmarkClicked = function () {
 };
 
 const handleAddBookmarkSubmit = function () {
-    $('.form-header').on('submit', '#create-bookmarks-form', function (e) {
+    $('#form-header').on('submit', '#create-bookmarks-form', function (e) {
         e.preventDefault();
         let newItem = $(e.target).serializeJson();
         console.log(newItem);
@@ -123,11 +123,19 @@ const handleDeleteBookmarkClicked = function () {
 }
 
 const handleToggleExpandedClicked = function () {
-    $('.bookmarks-list').on('click', '.list-div', e => {
+    $('#bookmarks-list').on('click', '.bookmark-head', e => {
         const id = getItemIdFromElement(e.currentTarget);
         let item = store.findById(id);
         store.toggleExpanded(item);
         render();
+    })
+    $('#bookmarks-list').on('keyup', '.bookmark-head', e => {
+        if (e.keyCode === 13) {
+            const id = getItemIdFromElement(e.currentTarget);
+            let item = store.findById(id);
+            store.toggleExpanded(item);
+            render();
+        }
     })
 }
 

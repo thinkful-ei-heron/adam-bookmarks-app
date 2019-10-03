@@ -39,7 +39,7 @@ label {
     max-width: 150px
 }
 
-.add-bookmark-button {
+#add-bookmark-button {
     background-color: green;
     color: white;
     border: 0;
@@ -48,7 +48,7 @@ label {
     max-width: 140px;
 }
 
-.add-bookmarks-form {
+#add-bookmarks-form {
     margin-bottom: 10px;
 }
 .bookmark-title {
@@ -76,7 +76,7 @@ fieldset {
     margin: auto;
 }
 
-.bookmarks-list {
+#bookmarks-list {
     display: block;
     margin: auto;
     padding: 0;
@@ -84,18 +84,18 @@ fieldset {
     list-style-type: none;
 }
 
-.list-div {
+.bookmark-head {
     background-color: rgb(243, 7, 7);
     height: 25px;
 } 
 
 .visit-button {
-    background-color: blue;
-    color: gold;
-    border: 1px white;
-    border-radius: 15px;
+    background-color: white;
+    color: blue;
+    text-decoration: underline;
+    border: none;
     margin: 5px 2px;
-    padding: 5px 10px;
+    padding: 2px 4px;
 }
 
 .delete-button {
@@ -104,7 +104,7 @@ fieldset {
 }
 
 p {
-    margin-left: 5px
+    margin: 2px 0 10px 5px;
 }
 
 .details-label {
