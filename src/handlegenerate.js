@@ -27,7 +27,7 @@ const generateBookmarkElement = function (item) {
                 <div class='bookmark-rating'>Rating: ${item.rating}</div>
             </div>    
             <div>
-                <form action='${item.url}'>
+                <form action='${item.url}' target='_blank'>
                     <button class='visit-button' type='submit'>Visit Site</button>
                 </form>
                     <p>${item.desc}</p>
