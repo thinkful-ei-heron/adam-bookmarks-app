@@ -92,6 +92,7 @@ const handleAddBookmarkClicked = function () {
 const handleAddBookmarkSubmit = function () {
     $('#form-header').on('submit', '#create-bookmarks-form', function (e) {
         e.preventDefault();
+        console.log('ran')
         let newItem = $(e.target).serializeJson();
         console.log(newItem);
         api.createItem(newItem)
